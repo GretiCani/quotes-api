@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=quotesdb
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=root
+    networks:
+      - quotes_network
+    ports:
+      - 5432:5432
+  quotes:
+    image: blog-api-01:latest
+    networks:
+      - quotes_network
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
+networks:
+  quotes_network:
+    driver: bridge

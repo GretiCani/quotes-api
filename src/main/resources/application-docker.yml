@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: ${DB_HOST:jdbc:postgresql://postgres:5432/quotesdb}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+# generated from https://www.grc.com/passwords.htm
+jwt:
+  key: 6F24F845E8DF7C7041FD9B9AC559167E0AE3253264C9AD9EC04F118F1C8F97AE
+
+urls:
+  basePath: ${BASE_API_URL:http://localhost:8080/api/v1}
+  quotesPath: ${QUOTE_API_URL:http://api.quotable.io}
