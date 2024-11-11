@@ -24,7 +24,7 @@ public class QuoteController {
     }
 
 
-    @GetMapping("/{id}/like")
+    @PostMapping("/{id}/likes")
     public ResponseEntity<Void> likeQuote(@PathVariable("id") String id){
         quoteService.likeQuote(id);
         return ResponseEntity.noContent().build();

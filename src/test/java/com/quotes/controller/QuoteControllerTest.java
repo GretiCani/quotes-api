@@ -40,7 +40,7 @@ public class QuoteControllerTest extends BaseIntegrationTest {
     @WithAnonymousUser
     public void when_get_quotes_for_anonymous_user_and_top_rated_is_present_then_return_top_rated() throws Exception {
         //make quote with id QUOTE_ID top-rated
-        mockMvc.perform(get("/api/v1/quotes/{quoteId}/like",QUOTE_ID))
+        mockMvc.perform(post("/api/v1/quotes/{quoteId}/likes",QUOTE_ID))
                 .andExpect(status().isNoContent());
 
         // verify that top-rated is returned instead of random quote
