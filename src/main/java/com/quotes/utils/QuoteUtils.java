@@ -35,7 +35,7 @@ public class QuoteUtils {
     public static Map<String,String> buildQuoteLinks(QuoteDto quote,String baseUrl){
         return Map.of("byAuthor", String.format("%s/quotes?author=%s",baseUrl,quote.author()),
                 "byTags",String.format("%s/quotes/compare?tags=%s",baseUrl,String.join(",", quote.tags())),
-                "likeQuote",String.format("%s/quotes/%s/like",baseUrl,quote.id()));
+                "likeQuote",String.format("%s/quotes/%s/likes",baseUrl,quote.id()));
     }
 
 }
